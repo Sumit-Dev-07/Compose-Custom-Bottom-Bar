@@ -40,8 +40,8 @@ fun CustomBottomNavigation(
     // Outer Radius ≈ Inner Radius + Gap -> 28 + 8 = 36dp (using 32dp for a tighter look)
     val outerBoxHeight = 92.dp
     val innerBarHeight = 76.dp
-    val outerCornerRadius = 32.dp
-    val innerCornerRadius = 28.dp
+    val outerCornerRadius = 24.dp
+    val innerCornerRadius = 20.dp
     val gapBetweenBars = 8.dp // Space between the outer glow and inner white bar
     
     val horizontalPadding = 16.dp // Margin from screen sides
