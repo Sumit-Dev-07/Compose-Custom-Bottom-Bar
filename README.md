@@ -11,7 +11,7 @@ A beautiful, custom bottom navigation bar implementation using Jetpack Compose. 
 
 ## Demo
 
-![Bottom Bar Demo](app/src/main/res/drawable/img.png)
+<img src="app/src/main/res/drawable/img.png" width="300" alt="Bottom Bar Demo" />
 
 ## Implementation Details
 
