@@ -13,7 +13,7 @@ import com.app.composebottombar.custom_navigation.CustomBottomNavigation
 fun HomeScreen() {
     var selectedItem by remember { mutableIntStateOf(0) }
     Scaffold(
-        containerColor = Color(0xFFE7E7E7),
+        containerColor = Color(0xFFF18673),
         bottomBar = {
             CustomBottomNavigation(
                 selectedItem = selectedItem,

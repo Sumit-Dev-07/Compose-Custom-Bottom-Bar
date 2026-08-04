@@ -35,40 +35,46 @@ fun CustomBottomNavigation(
     val orangeColor = Color(0xFFE64A19)
     val grayColor = Color(0xFF9E9E9E)
 
-    val boxHeight = 102.dp
-    val bottomBarHeight = 80.dp
-    val cornerRadius = 24.dp
-    val innerPadding = 12.dp
+    // Layout dimensions calculation:
+    // Outer Height = Inner Bar Height + (Gap * 2) -> 76 + (8 * 2) = 92dp
+    // Outer Radius ≈ Inner Radius + Gap -> 28 + 8 = 36dp (using 32dp for a tighter look)
+    val outerBoxHeight = 92.dp
+    val innerBarHeight = 76.dp
+    val outerCornerRadius = 32.dp
+    val innerCornerRadius = 28.dp
+    val gapBetweenBars = 8.dp // Space between the outer glow and inner white bar
+    
+    val horizontalPadding = 16.dp // Margin from screen sides
+    val bottomMargin = 24.dp      // Distance from the bottom of the screen
 
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .navigationBarsPadding()
-            .padding(bottom = 24.dp, start = 16.dp, end = 16.dp),
-        contentAlignment = Alignment.BottomCenter
+            .padding(bottom = bottomMargin, start = horizontalPadding, end = horizontalPadding),
+        contentAlignment = Alignment.Center
     ) {
         // Outer glow/border layer
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(boxHeight)
-                .clip(RoundedCornerShape(cornerRadius))
+                .height(outerBoxHeight)
+                .clip(RoundedCornerShape(outerCornerRadius))
                 .background(Color.White.copy(alpha = 0.2f))
                 .border(
                     1.dp,
                     Color.White.copy(alpha = 0.3f),
-                    RoundedCornerShape(cornerRadius),
+                    RoundedCornerShape(outerCornerRadius),
                 )
         )
 
         // Main white bar
         Row(
             modifier = Modifier
-                //.padding(horizontal = 6.dp, vertical = 6.dp)
                 .fillMaxWidth()
-                .padding(innerPadding)
-                .height(bottomBarHeight)
-                .clip(RoundedCornerShape(cornerRadius))
+                .padding(gapBetweenBars) // Gap between outer and inner
+                .height(innerBarHeight)
+                .clip(RoundedCornerShape(innerCornerRadius))
                 .background(Color.White),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically

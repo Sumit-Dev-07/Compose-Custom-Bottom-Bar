@@ -18,11 +18,11 @@ fun BaseContent(title: String, padding: PaddingValues) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(
+        /*Text(
             text = title,
             modifier = Modifier
                 .padding(padding),
             textAlign = TextAlign.Center
-        )
+        )*/
     }
 }
